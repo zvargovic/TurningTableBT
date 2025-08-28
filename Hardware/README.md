@@ -8,21 +8,21 @@ This project is a compact, gear-driven rotating table designed for 3D scanning, 
 ## 📷 Rendered Views
 
 Assembled view
-![Assembled View](images/01MD.PNG)
+![Assembled View](images/01MD.png)
 Upper changeable plate
-![Top View](images/02MD.PNG) |
+![Top View](images/02MD.png) |
 
 Outer area made with IRON PLA
-![Bottom View](images/03MD.PNG)
+![Bottom View](images/03MD.png)
 Bearing 604ZZ
-![Bearing](images/04MD.PNG)
+![Bearing](images/04MD.png)
 Upper changeable plate (bottom view)
-![Gear](images/05MD.PNG) |
+![Gear](images/05MD.png) |
 
 Small gear 
-![External Gear](images/06MD.PNG)
+![External Gear](images/06MD.png)
 Housing made with ABS
-![Electronics](images/07MD.PNG) |
+![Electronics](images/07MD.png) |
 ---
 
 ## 🔌 ESP32 Pinout
