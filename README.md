@@ -1,28 +1,74 @@
-# OkretniStolBT (Android, Kotlin)
+# TurningTableBT / OkretniStolBT
 
-Jednostavna Android aplikacija za upravljanje okretnim stolom preko **Bluetooth SPP** veze (ESP32 Serial BT).
+Android application for controlling a **Bluetooth-connected rotating table (ESP32 based)**.  
+The app allows setting rotation direction, mode, and speed, as well as performing a self-test.  
+Includes a log window for debugging commands sent/received over Bluetooth.
 
-## Što radi
-- Spaja se na **upareni** BT uređaj (iz liste uparenih).
-- Šalje jednostavne tekstualne naredbe, svaka završena s `\n`:
-  - `PLAY`, `STOP`, `CW`, `CCW`
-  - `SPEED +`, `SPEED -`
-  - `ANGLE +`, `ANGLE -`
-  - bilo koja **custom** naredba iz polja
+---
 
-## Zahtjevi
-- ESP32 treba oglašavati **Serial Bluetooth (SPP)** i čitati linije (npr. preko `BluetoothSerial` biblioteke). Standardni SPP UUID: `00001101-0000-1000-8000-00805F9B34FB`.
-- Android 5.0+ (minSdk 21), targetSdk 34. Na Androidu 12+ aplikacija traži `BLUETOOTH_CONNECT/SCAN` runtime dozvole, na starijem `ACCESS_FINE_LOCATION`.
+## English 🇬🇧
 
-## Upute
-1. Uključite BT na mobitelu i **uparite** se s ESP32 u *System Settings* (izvan aplikacije).
-2. Pokrenite aplikaciju -> **Connect to Device** -> odaberite upareni uređaj.
-3. Pritiskom na tipke šalju se naredbe. U dnu se vidi *Log*.
-4. Polje *Custom command* šalje custom liniju (npr. `SPEED 3` ili `ANGLE 90`).
+### Features
+- Connects to ESP32 over Bluetooth (auto-reconnects to last device).
+- Control rotation:
+  - **CW / CCW** (clockwise / counter-clockwise).
+  - **Continuous** or **Target angle** mode.
+  - Speed adjustment (1–5 RPM).
+- Self-test mode (disables controls until test finishes).
+- Log viewer (shows sent/received serial commands).
+- Intro screen with setup instructions.
+- Multi-language support (English & Croatian).
+- Optimized for both phones and foldables.
 
-## Prilagodba
-- Komande možete urediti u `MainActivity.kt` (`send("...")`).
-- Ako vaš ESP32 koristi drugačiji mehanizam ili treba CRLF, promijenite `BluetoothHelper.sendLine()`.
+### Requirements
+- Android 8.0 (API 26) or higher.
+- ESP32 device flashed with the compatible firmware.
 
-## Napomena
-- Aplikacija ne skenira za nove uređaje (prikazuje **samo uparene**), što je jednostavnije i stabilnije.
+### Installation
+1. Pair your ESP32 device with your phone via Bluetooth settings.
+2. Install the APK on your Android device.
+3. Launch the app and select your paired ESP32.
+4. Use on-screen buttons and slider to control the turntable.
+
+### Permissions
+The app will request the following runtime permissions:
+- `BLUETOOTH_CONNECT`
+- `BLUETOOTH_SCAN`
+- (Optionally) Location access if required by Android version.
+
+---
+
+## Hrvatski 🇭🇷
+
+### Značajke
+- Povezuje se s ESP32 putem Bluetootha (automatski se spaja na zadnji uređaj).
+- Upravljanje rotacijom:
+  - **CW / CCW** (u smjeru kazaljke na satu / suprotno).
+  - Način rada **kontinuirano** ili **1 krug**.
+  - Podešavanje brzine (1–5 RPM).
+- Self-test način (onemogućava kontrole dok test traje).
+- Prozor s logovima (prikazuje poslane/primljene serijske naredbe).
+- Uvodni ekran s uputama za korištenje.
+- Višejezična podrška (engleski i hrvatski).
+- Optimizirano za mobitele i preklopne uređaje.
+
+### Zahtjevi
+- Android 8.0 (API 26) ili noviji.
+- ESP32 uređaj s kompatibilnim firmwareom.
+
+### Instalacija
+1. Uparite ESP32 uređaj s telefonom u Bluetooth postavkama.
+2. Instalirajte APK na svoj Android uređaj.
+3. Pokrenite aplikaciju i odaberite upareni ESP32.
+4. Koristite gumbe i klizač na ekranu za upravljanje stolom.
+
+### Dozvole
+Aplikacija traži sljedeće dozvole pri prvom pokretanju:
+- `BLUETOOTH_CONNECT`
+- `BLUETOOTH_SCAN`
+- (Opcionalno) lokacija, ovisno o Android verziji.
+
+---
+## Author: Žarko Vargović, Dubrava 232, Zagreb, Croatia
+## License
+This project is private and intended for personal use.
