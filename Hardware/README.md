@@ -8,7 +8,7 @@ This project is a compact, gear-driven rotating table designed for 3D scanning, 
 ## 📷 Rendered Views
 
 Assembled view
-![Assembled View](images/01.png)
+![Assembled View](Hardware/images/01.png)
 Upper changeable plate
 ![Upper changeable plate](images/02.png) |
 
