@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Gornja slika – ista kao na komand ekranu -->
+        <ImageView
+            android:id="@+id/imgCoverIntro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:maxWidth="@dimen/hero_max_width"
+            android:maxHeight="@dimen/hero_max_height"
+            android:src="@drawable/ttoledintro"
+            android:contentDescription="@null"
+            tools:ignore="ContentDescription" />
+
+        <!-- Naslov -->
+        <TextView
+            android:id="@+id/tvIntroTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/intro_title"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:layout_marginTop="14dp"
+            android:gravity="center_horizontal"
+            android:textAlignment="center" />
+
+        <!-- Upute -->
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:lineSpacingExtra="2dp"
+            android:textSize="16sp"
+            android:text="@string/intro_welcome" />
+
+        <TextView
+            android:id="@+id/tvConnect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:lineSpacingExtra="2dp"
+            android:textSize="16sp"
+            android:text="@string/intro_connect" />
+
+        <TextView
+            android:id="@+id/tvControl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:lineSpacingExtra="2dp"
+            android:textSize="16sp"
+            android:text="@string/intro_control" />
+
+        <!-- Gumb za nastavak -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="46dp"
+            android:text="@string/intro_open_controls"
+            android:backgroundTint="@android:color/holo_green_dark" />
+    </LinearLayout>
+</ScrollView>

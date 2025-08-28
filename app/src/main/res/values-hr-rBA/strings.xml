@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Okretni stol</string>
+    <string name="intro_title">Okretni stol — Upute</string>
+    <string name="intro_open_controls">Otvori kontrole</string>
+    <string name="label_speed_rpm">Brzina (RPM)</string>
+    <string name="rpm_1">1 RPM</string>
+    <string name="rpm_5">5 RPM</string>
+    <string name="mode_c">C</string>
+    <string name="dir_cw">CW</string>
+    <string name="dir_ccw">CCW</string>
+    <string name="cd_cw">CW</string>
+    <string name="cd_ccw">CCW</string>
+    <string name="cd_play_pause">Play/Pause</string>
+    <string name="cd_toggle_mode">Promjena moda C/T</string>
+    <string name="cd_open_log">Otvori Log</string>
+
+    <!-- buttons -->
+    <string name="btn_test">TEST</string>
+    <!-- Titles -->
+    <string name="title_connected">Povezano</string>
+    <string name="title_not_connected">Nije povezano</string>
+    <string name="title_connecting_to">Okretni stol — Spajanje na %1$s…</string>
+
+    <string name="no_paired_devices">Nema uparenih uređaja. Uparite u postavkama sustava.</string>
+    <string name="select_paired_device">Odaberite upareni uređaj</string>
+    <string name="cancel">Odustani</string>
+
+    <string name="not_connected">Nije povezano</string>
+    <string name="locked_while_running">Zaključano tijekom vrtnje</string>
+
+    <string name="bt_perm_granted">Bluetooth dozvole odobrene</string>
+    <string name="bt_perm_required">Potrebne su Bluetooth dozvole za povezivanje</string>
+    <string name="start_button">Pokreni</string>
+    <string name="intro_welcome">Dobrodošli u Okretni stol</string>
+    <string name="intro_connect">Provjerite da je uređaj uparen putem Bluetootha</string>
+    <string name="intro_control">Koristite aplikaciju za upravljanje brzinom, smjerom i načinom rada</string>
+    <string name="log_empty">Nema zapisa</string>
+
+</resources>

@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Turning Table BT</string>
+    <string name="title_connected">Turning Table — Connected</string>
+    <string name="title_not_connected">Turning Table — Not connected</string>
+    <string name="title_connecting_to">Turning Table — Connecting to %1$s…</string>
+
+    <string name="label_speed_rpm">Speed (RPM)</string>
+    <string name="rpm_1">1 RPM</string>
+    <string name="rpm_5">5 RPM</string>
+    <string name="mode_c">C</string>
+    <string name="dir_cw">CW</string>
+    <string name="dir_ccw">CCW</string>
+    <string name="cd_cw">CW</string>
+    <string name="cd_ccw">CCW</string>
+    <string name="cd_play_pause">Play/Pause</string>
+    <string name="cd_toggle_mode">Toggle mode C/T</string>
+    <string name="cd_open_log">Open Log</string>
+
+    <!-- buttons -->
+    <string name="btn_test">TEST</string>
+    <string name="no_paired_devices">No paired devices. Pair in system settings.</string>
+    <string name="select_paired_device">Select paired device</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="not_connected">Not connected</string>
+    <string name="locked_while_running">Locked while running</string>
+
+    <string name="bt_perm_granted">Bluetooth permissions granted</string>
+    <string name="bt_perm_required">Bluetooth permissions are required to connect</string>
+    <string name="start_button">Start</string>
+    <string name="intro_welcome">Welcome to Turning Table</string>
+    <string name="intro_connect">Make sure your device is paired via Bluetooth</string>
+    <string name="intro_control">Use the app to control speed, direction, and mode</string>
+    <string name="intro_title">Turning Table — Instructions</string>
+    <string name="intro_open_controls">Open controls</string>
+    <string name="log_empty">No log available</string>
+</resources>

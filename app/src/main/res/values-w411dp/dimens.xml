@@ -1,0 +1,3 @@
+<resources>
+    <dimen name="cover_max_height">300dp</dimen>
+</resources>

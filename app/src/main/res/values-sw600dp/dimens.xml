@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="cover_max_height">260dp</dimen>
+    <dimen name="hero_max_width">220dp</dimen>
+    <dimen name="hero_max_height">160dp</dimen>
+</resources>

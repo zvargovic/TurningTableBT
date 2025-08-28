@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- COVER (statična/animirana) -->
+        <ImageView
+            android:id="@+id/imgCover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:maxHeight="@dimen/cover_max_height"
+            android:src="@drawable/turntable"
+            android:contentDescription="@null"
+            tools:ignore="ContentDescription" />
+
+        <!-- INFO BLOK -->
+        <LinearLayout
+            android:id="@+id/cardInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:layout_marginTop="24dp"
+            android:background="?attr/colorSurface"
+            android:elevation="2dp">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title_connected"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingBottom="8dp" />
+
+            <!-- 3 kolone: Mode / Speed / Direction (ikone + tekst ispod) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:gravity="center">
+
+                <!-- MODE -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/iconMode"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_c"
+                        app:tint="#00BFFF"
+                        android:contentDescription="@null" />
+
+                    <TextView
+                        android:id="@+id/tvModeInfoValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mode_c"
+                        android:textColor="#00BFFF"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- SPEED -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/iconSpeed"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_speed"
+                        app:tint="#00BFFF"
+                        android:contentDescription="@null" />
+
+                    <TextView
+                        android:id="@+id/tvSpeedInfoValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rpm_1"
+                        android:textColor="#00BFFF"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- DIRECTION -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/iconDirection"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_cw"
+                        app:tint="#00BFFF"
+                        android:contentDescription="@null" />
+
+                    <TextView
+                        android:id="@+id/tvDirectionInfoValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dir_cw"
+                        android:textColor="#00BFFF"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Slider za brzinu -->
+        <TextView
+            android:id="@+id/tvSpeedLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_speed_rpm"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <!-- Oznake ispod slidera -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 RPM" />
+
+            <TextView
+                android:id="@+id/tvSpeedValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/rpm_1"
+                android:textStyle="bold"
+                android:textColor="#00BFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rpm_5" />
+        </LinearLayout>
+
+        <!-- GLAVNE KONTROLE -->
+        <LinearLayout
+            android:id="@+id/controlsRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingTop="32dp"
+            android:paddingBottom="32dp">
+
+            <!-- PREV = CW -->
+            <ImageButton
+                android:id="@+id/btnCW"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="28dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="centerInside"
+                app:tint="@android:color/white"
+                android:contentDescription="@string/cd_cw"
+                android:src="@android:drawable/ic_media_previous" />
+
+            <!-- PLAY/PAUSE -->
+            <ImageButton
+                android:id="@+id/btnPlayPause"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/bg_circle_neutral"
+                android:scaleType="centerInside"
+                app:tint="@android:color/white"
+                android:contentDescription="@string/cd_play_pause"
+                android:src="@android:drawable/ic_media_play" />
+
+            <!-- NEXT = CCW -->
+            <ImageButton
+                android:id="@+id/btnCCW"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="28dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="centerInside"
+                app:tint="@android:color/white"
+                android:contentDescription="@string/cd_ccw"
+                android:src="@android:drawable/ic_media_next" />
+        </LinearLayout>
+
+        <!-- DONJI RED: Mode toggle (btnRepeatToggle) — TEST — Log -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <!-- Mode toggle (C/T) -->
+            <ImageButton
+                android:id="@+id/btnRepeatToggle"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="6dp"
+                app:tint="#00BFFF"
+                android:contentDescription="@string/cd_toggle_mode"
+                android:src="@android:drawable/ic_menu_rotate" />
+
+            <!-- TEST BUTTON u sredini -->
+            <Button
+                android:id="@+id/btnSelfTest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_test"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:backgroundTint="#00BFFF"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <!-- Log otvaranje -->
+            <ImageButton
+                android:id="@+id/btnLogView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="6dp"
+                app:tint="#00BFFF"
+                android:contentDescription="@string/cd_open_log"
+                android:src="@android:drawable/ic_menu_sort_by_size" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
