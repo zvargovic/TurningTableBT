@@ -14,7 +14,7 @@ Upper changeable plate
 
 Outer area made with IRON PLA
 ![Bottom View](images/03MD.png)
-Bearing 604ZZ
+Bearing 604ZZ  
 ![Bearing](images/04MD.png)
 Upper changeable plate (bottom view)
 ![Gear](images/05MD.png) |
