@@ -17,8 +17,10 @@ This project is a compact, gear-driven rotating table designed for 3D scanning, 
 | Small gear                       | ![Gear](../images/06.png)           |
 | Housing made with ABS            | ![Housing](../images/07.png)        |
 ---
+All parts is made with 3D printer QIDITECH X-3
 
 ## 🔌 ESP32 Pinout
+
 
 ```markdown
 | ESP32 Pin | Function            | Connected To             |
