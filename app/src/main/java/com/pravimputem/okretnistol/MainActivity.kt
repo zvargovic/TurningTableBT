@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvSpeedInfoValue: TextView
     private lateinit var tvDirectionInfoValue: TextView
     private lateinit var tvSpeedValue: TextView
-
+    private lateinit var tvModeSmjer: TextView
     private lateinit var btnPlayPause: ImageButton
     private lateinit var btnCW: ImageButton
     private lateinit var btnCCW: ImageButton
@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnLogView: ImageButton
     private lateinit var sliderSpeed: Slider
     private lateinit var btnSelfTest: Button
+    private lateinit var iconMode: ImageView
 
     // --- state ---
     private var isPlaying = false
@@ -102,9 +103,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        ensureBtPerms()
         bindViews()
+        ensureBtPerms()
+
         styleSliderBlue()
         wireBtCallbacks()
 
@@ -136,6 +137,10 @@ class MainActivity : AppCompatActivity() {
             val cmd = if (modeIsC) "ModeRunC" else "ModeRunT"
             log("UI: Toggle mode -> ${if (modeIsC) "C" else "T"}")
             send(cmd)
+
+            // OVO MORAŠ IMATI:
+            tvModeSmjer.text = if (modeIsC) getString(R.string.mode_c) else getString(R.string.mode_t)
+            iconMode.setImageResource(if (modeIsC) R.drawable.ic_c else R.drawable.ic_t)
         }
         btnPlayPause.setOnClickListener {
             // Play/Stop uvijek dopušten
@@ -348,7 +353,8 @@ class MainActivity : AppCompatActivity() {
         tvSpeedInfoValue = findViewById(R.id.tvSpeedInfoValue)
         tvDirectionInfoValue = findViewById(R.id.tvDirectionInfoValue)
         tvSpeedValue = findViewById(R.id.tvSpeedValue)
-
+        tvModeSmjer = findViewById(R.id.tvModeSmjer)
+        iconMode = findViewById(R.id.iconMode)
         btnPlayPause = findViewById(R.id.btnPlayPause)
         btnCW = findViewById(R.id.btnCW)
         btnCCW = findViewById(R.id.btnCCW)
